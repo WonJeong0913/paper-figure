@@ -7,7 +7,7 @@ Ask an agent for a figure and you usually get text that leaves its box, labels t
 miss their targets. This skill measures every draft at the size it will be printed and fixes it until the
 errors are zero, before you see it.
 
-https://github.com/user-attachments/assets/b0a156f8-9704-4b76-9175-13607ee8ca95
+https://github.com/user-attachments/assets/f0f0f776-09e1-449d-83c8-a60c7e778482
 
 Video file: [docs/demo.mp4](docs/demo.mp4) · GIF version: [docs/demo.gif](docs/demo.gif). The demo is a re-creation of the workflow; the figures
 and the audit results in it are real output of the skill.
