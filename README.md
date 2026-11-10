@@ -12,6 +12,59 @@ https://github.com/user-attachments/assets/b0a156f8-9704-4b76-9175-13607ee8ca95
 Video file: [docs/demo.mp4](docs/demo.mp4) · GIF version: [docs/demo.gif](docs/demo.gif). The demo is a re-creation of the workflow; the figures
 and the audit results in it are real output of the skill.
 
+<details>
+<summary><b>한국어</b></summary>
+
+논문 그림(방법 개요, 파이프라인, 모델 구조)을 수정 가능한 벡터 다이어그램으로 그리는 에이전트 스킬입니다.
+이미지 생성 모델은 쓰지 않습니다. 에이전트에게 그림을 맡기면 보통 글자가 상자 밖으로 나가고, 라벨이 겹치고,
+선이 엉뚱한 곳에 닿습니다. 이 스킬은 모든 초안을 실제 인쇄 크기로 재고, 오류가 0이 될 때까지 고친 뒤에
+보여줍니다.
+
+- 수정 전후로 모듈·화살표·경계 목록을 대조해 구조를 지킵니다.
+- ICML, NeurIPS, ICLR, ACL, AAAI, CVPR, IEEE, ACM, Nature 규격에 맞춰 글자를 인쇄 pt로 잽니다.
+- 배치가 다른 후보 2–3개를 그려 나란히 보여주고 고르게 합니다.
+- LaTeX용 벡터 PDF와 Word·슬라이드용 300 dpi PNG로 내보냅니다.
+
+설치: Claude 앱은 [최신 릴리스](https://github.com/WonJeong0913/paper-figure/releases/latest)의
+`paper-figure.zip`을 Customize › Skills › Upload a skill로 올리고, Claude Code는 아래 Install의
+`git clone` 한 줄을 실행합니다. 사용 예: "paper-figure 스킬로 내 방법의 오버뷰 그림 그려줘."
+</details>
+
+<details>
+<summary><b>日本語</b></summary>
+
+論文の図（手法の概要、パイプライン、モデル構造）を編集可能なベクター図として描くエージェントスキルです。
+画像生成モデルは使いません。エージェントに図を任せると、文字が枠からはみ出したり、ラベルが重なったり、
+線がずれたりしがちです。このスキルはすべての下書きを実際の印刷サイズで測り、エラーがゼロになるまで直してから
+見せます。
+
+- 編集の前後でモジュール・矢印・境界の一覧を照合し、構造を守ります。
+- ICML、NeurIPS、ICLR、ACL、AAAI、CVPR、IEEE、ACM、Nature の規格に合わせ、文字を印刷時の pt で測ります。
+- レイアウトの異なる候補を 2〜3 案描いて並べ、選んでもらいます。
+- LaTeX 用のベクター PDF と、Word・スライド用の 300 dpi PNG を書き出します。
+
+インストール: Claude アプリでは[最新リリース](https://github.com/WonJeong0913/paper-figure/releases/latest)の
+`paper-figure.zip` を Customize › Skills › Upload a skill からアップロードし、Claude Code では下の Install に
+ある `git clone` を実行します。使い方の例:「paper-figure スキルで、私の手法の概要図を描いて。」
+</details>
+
+<details>
+<summary><b>简体中文</b></summary>
+
+一个把论文插图（方法概览、流程、模型结构）绘制成可编辑矢量图的智能体技能，不使用图像生成模型。
+让智能体画图时，常见的问题是文字溢出方框、标签相互重叠、连线对不准。本技能会按实际印刷尺寸测量每一版草图，
+修正到零错误后再交给你。
+
+- 修改前后对照模块、箭头和边界清单，保证结构不变。
+- 按 ICML、NeurIPS、ICLR、ACL、AAAI、CVPR、IEEE、ACM、Nature 的规范，以印刷磅值（pt）测量文字。
+- 绘制 2–3 个布局不同的候选方案并排展示，由你选择。
+- 导出用于 LaTeX 的矢量 PDF，以及用于 Word 和幻灯片的 300 dpi PNG。
+
+安装：Claude 应用请从[最新发布](https://github.com/WonJeong0913/paper-figure/releases/latest)下载
+`paper-figure.zip`，在 Customize › Skills › Upload a skill 中上传；Claude Code 请运行下方 Install 中的
+`git clone` 命令。使用示例：“用 paper-figure 技能画出我的方法概览图。”
+</details>
+
 ## What it does
 
 - **Keeps your structure.** It lists every module, arrow, boundary and loop in a ledger before editing and
