@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Fig. 1 — RAG pipeline (example)</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="position: relative; width: 1584px; height: 370px; background: #FFFFFF; font-family: Arial, 'Liberation Sans', 'Helvetica Neue', sans-serif; color: #2C2C2A">
+<svg width="139" height="8" viewBox="0 0 139 8" preserveAspectRatio="none" style="position: absolute; left: 20px; top: 161px; width: 139px; height: 8px; overflow: visible; fill: none; stroke: #2C2C2A; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round;"><defs><marker id="dc-arrow-head-filled-1" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#2C2C2A" stroke="none" style="stroke: none; fill: #2C2C2A; fill: context-stroke"/></marker></defs><path d="M 0 4 L 135 4" marker-end="url(#dc-arrow-head-filled-1)"></path></svg>
+<svg width="149" height="8" viewBox="0 0 149 8" preserveAspectRatio="none" style="position: absolute; left: 370px; top: 161px; width: 149px; height: 8px; overflow: visible; fill: none; stroke: #2C2C2A; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round;"><defs><marker id="dc-arrow-head-filled-2" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#2C2C2A" stroke="none" style="stroke: none; fill: #2C2C2A; fill: context-stroke"/></marker></defs><path d="M 0 4 L 145 4" marker-end="url(#dc-arrow-head-filled-2)"></path></svg>
+<svg width="169" height="8" viewBox="0 0 169 8" preserveAspectRatio="none" style="position: absolute; left: 700px; top: 161px; width: 169px; height: 8px; overflow: visible; fill: none; stroke: #2C2C2A; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round;"><defs><marker id="dc-arrow-head-filled-3" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#2C2C2A" stroke="none" style="stroke: none; fill: #2C2C2A; fill: context-stroke"/></marker></defs><path d="M 0 4 L 165 4" marker-end="url(#dc-arrow-head-filled-3)"></path></svg>
+<svg width="159" height="8" viewBox="0 0 159 8" preserveAspectRatio="none" style="position: absolute; left: 1050px; top: 161px; width: 159px; height: 8px; overflow: visible; fill: none; stroke: #2C2C2A; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round;"><defs><marker id="dc-arrow-head-filled-4" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#2C2C2A" stroke="none" style="stroke: none; fill: #2C2C2A; fill: context-stroke"/></marker></defs><path d="M 0 4 L 155 4" marker-end="url(#dc-arrow-head-filled-4)"></path></svg>
+<svg width="163" height="8" viewBox="0 0 163 8" preserveAspectRatio="none" style="position: absolute; left: 1400px; top: 161px; width: 163px; height: 8px; overflow: visible; fill: none; stroke: #2C2C2A; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round;"><defs><marker id="dc-arrow-head-filled-5" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#2C2C2A" stroke="none" style="stroke: none; fill: #2C2C2A; fill: context-stroke"/></marker></defs><path d="M 0 4 L 159 4" marker-end="url(#dc-arrow-head-filled-5)"></path></svg>
+<svg width="8" height="79" viewBox="0 0 8 79" preserveAspectRatio="none" style="position: absolute; left: 606px; top: 211px; width: 8px; height: 79px; overflow: visible; fill: none; stroke: #6B6A64; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 2 6;"><defs><marker id="dc-arrow-head-filled-6" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#6B6A64" stroke="none" style="stroke: none; fill: #6B6A64; fill: context-stroke"/></marker></defs><path d="M 4 79 L 4 4" marker-end="url(#dc-arrow-head-filled-6)"></path></svg>
+<svg width="8" height="58" viewBox="0 0 8 58" preserveAspectRatio="none" style="position: absolute; left: 1301px; top: 62px; width: 8px; height: 58px; overflow: visible; fill: none; stroke: #D55E00; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 7 6;"><path d="M 4 58 L 4 0"></path></svg>
+<svg width="695" height="8" viewBox="0 0 695 8" preserveAspectRatio="none" style="position: absolute; left: 610px; top: 58px; width: 695px; height: 8px; overflow: visible; fill: none; stroke: #D55E00; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 7 6;"><path d="M 695 4 L 0 4"></path></svg>
+<svg width="8" height="57" viewBox="0 0 8 57" preserveAspectRatio="none" style="position: absolute; left: 606px; top: 62px; width: 8px; height: 57px; overflow: visible; fill: none; stroke: #D55E00; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 7 6;"><defs><marker id="dc-arrow-head-filled-7" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#D55E00" stroke="none" style="stroke: none; fill: #D55E00; fill: context-stroke"/></marker></defs><path d="M 4 0 L 4 53" marker-end="url(#dc-arrow-head-filled-7)"></path></svg>
+<div style="position: absolute; left: 160px; top: 120px; width: 210px; height: 90px; box-sizing: border-box; padding: 6px 10px; display: flex; align-items: center; justify-content: center; text-align: center; background: #FFFFFF; border: 2px solid #5B6472; border-radius: 12px; font-size: 30px; line-height: 36px; font-weight: 700; color: #2C2C2A; white-space: nowrap"><span>Query<br>Encoder</span></div>
+<div style="position: absolute; left: 520px; top: 120px; width: 180px; height: 90px; box-sizing: border-box; padding: 6px 10px; display: flex; align-items: center; justify-content: center; text-align: center; background: #FFFFFF; border: 2px solid #5B6472; border-radius: 12px; font-size: 30px; line-height: 36px; font-weight: 700; color: #2C2C2A; white-space: nowrap"><span>Retriever</span></div>
+<div style="position: absolute; left: 870px; top: 120px; width: 180px; height: 90px; box-sizing: border-box; padding: 6px 10px; display: flex; align-items: center; justify-content: center; text-align: center; background: #FFFFFF; border: 2px solid #5B6472; border-radius: 12px; font-size: 30px; line-height: 36px; font-weight: 700; color: #2C2C2A; white-space: nowrap"><span>Reranker</span></div>
+<div style="position: absolute; left: 1210px; top: 120px; width: 190px; height: 90px; box-sizing: border-box; padding: 6px 10px; display: flex; align-items: center; justify-content: center; text-align: center; background: #F3F1FE; border: 2px solid #7F77DD; border-radius: 12px; font-size: 30px; line-height: 36px; font-weight: 700; color: #26215C; white-space: nowrap"><span>Generator</span></div>
+<div style="position: absolute; left: 520px; top: 290px; width: 180px; height: 56px; box-sizing: border-box; padding: 0 14px; display: flex; align-items: center; justify-content: center; background: #FFFFFF; border: 2px solid #9A988F; border-radius: 10px; font-size: 30px; line-height: 36px; font-weight: 700; color: #3D3D3A; white-space: nowrap"><span>Corpus</span></div>
+<div style="position: absolute; left: 20px; top: 121px; width: 140px; box-sizing: border-box; text-align: center; font-size: 30px; line-height: 36px; color: #3D3D3A; white-space: nowrap">question</div>
+<div style="position: absolute; left: 385px; top: 121px; width: 120px; box-sizing: border-box; text-align: center; font-size: 30px; line-height: 36px; color: #3D3D3A; white-space: nowrap">query</div>
+<div style="position: absolute; left: 715px; top: 121px; width: 140px; box-sizing: border-box; text-align: center; font-size: 30px; line-height: 36px; color: #3D3D3A; white-space: nowrap">top-100</div>
+<div style="position: absolute; left: 1055px; top: 121px; width: 150px; box-sizing: border-box; text-align: center; font-size: 30px; line-height: 36px; color: #3D3D3A; white-space: nowrap">passages</div>
+<div style="position: absolute; left: 1417px; top: 121px; width: 130px; box-sizing: border-box; text-align: center; font-size: 30px; line-height: 36px; color: #3D3D3A; white-space: nowrap">answer</div>
+<div style="position: absolute; left: 827px; top: 16px; width: 260px; box-sizing: border-box; text-align: center; font-size: 30px; line-height: 36px; color: #D55E00; white-space: nowrap">missing evidence</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1584,"height":370}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

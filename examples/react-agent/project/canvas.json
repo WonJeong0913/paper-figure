@@ -1,0 +1,22 @@
+{
+  "v": 3,
+  "title": "paper-figure example",
+  "launch": {
+    "view": "canvas"
+  },
+  "pages": [],
+  "notes": {},
+  "designSystems": [],
+  "boards": {
+    "Main.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1584,
+      "h": 440,
+      "title": "Fig. 1 \u2014 ReAct agent loop (example)"
+    }
+  },
+  "order": [
+    "Main.dc.html"
+  ]
+}
