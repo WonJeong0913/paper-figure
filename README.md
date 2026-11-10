@@ -9,7 +9,7 @@ errors are zero, before you see it.
 
 https://github.com/user-attachments/assets/f0f0f776-09e1-449d-83c8-a60c7e778482
 
-Video file: [docs/demo.mp4](docs/demo.mp4) · GIF version: [docs/demo.gif](docs/demo.gif). The demo is a re-creation of the workflow; the figures
+The demo is a re-creation of the workflow; the figures
 and the audit results in it are real output of the skill.
 
 <details>
