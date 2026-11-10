@@ -27,14 +27,21 @@ and the audit results in it are real output of the skill.
 
 ## Install
 
-Copy the `paper-figure` folder into your agent's skills directory (for Claude Code:
-`~/.claude/skills/paper-figure/`), then:
+**Claude apps (claude.ai, desktop):** download `paper-figure.zip` from the
+[latest release](https://github.com/WonJeong0913/paper-figure/releases/latest), then go to
+**Customize › Skills › + › Create skill › Upload a skill** and choose the zip. Code execution must be on.
+(Do not upload GitHub's "Download ZIP": its folder is named `paper-figure-main` and the upload is refused.)
+
+**Claude Code:**
 
 ```bash
+git clone https://github.com/WonJeong0913/paper-figure ~/.claude/skills/paper-figure
 pip install playwright numpy pillow
 python3 -m playwright install chromium
 # optional, enables the PDF font check: poppler-utils
 ```
+
+Then ask: "Use the paper-figure skill to draw the overview figure for my method."
 
 ## Try it
 
